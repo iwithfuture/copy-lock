@@ -352,6 +352,90 @@ img {
   background: var(--panel);
 }
 
+.advantages {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 22px;
+  margin: 16px 4vw 0;
+  padding: 26px 36px;
+  border-radius: 4px;
+  background:
+    linear-gradient(90deg, rgba(244, 245, 247, 0.96), rgba(244, 245, 247, 0.84)),
+    url("assets/hero-lock.jpg") right center / auto 100% no-repeat;
+}
+
+.advantages-copy {
+  align-self: center;
+}
+
+.advantages-copy .eyebrow {
+  color: #39a85a;
+  font-size: 13px;
+}
+
+.advantages-copy h2 {
+  margin: 4px 0 10px;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.advantages-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.advantage-card {
+  display: grid;
+  align-content: center;
+  min-height: 88px;
+  padding: 16px 14px;
+  border: 1px solid rgba(26, 112, 53, 0.18);
+  border-radius: 3px;
+  color: #21412d;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 28px rgba(9, 26, 15, 0.08);
+}
+
+.advantage-card.featured {
+  color: #0c3b1d;
+  background: linear-gradient(145deg, #56bd6b, #32a65a);
+}
+
+.stat-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  color: #2e9b4e;
+  font-variant-numeric: tabular-nums;
+}
+
+.featured .stat-number {
+  color: #14331e;
+  font-size: 34px;
+}
+
+.advantage-card small {
+  margin-top: 10px;
+  color: #466052;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+
+.featured small {
+  color: #17351f;
+}
+
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -957,9 +1041,18 @@ img {
   .model-grid,
   .application-grid,
   .why-grid,
+  .advantages,
   .factory-oem,
   .partners {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .advantages {
+    padding: 22px;
+  }
+
+  .advantage-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
 
   .quote-section form {
@@ -1032,6 +1125,7 @@ img {
   .model-grid,
   .application-grid,
   .why-grid,
+  .advantages,
   .factory-oem,
   .partners,
   .numbers-panel,
@@ -1056,6 +1150,36 @@ img {
 
   .quote-section textarea {
     grid-column: span 1;
+  }
+
+  .advantages {
+    margin-top: 10px;
+    padding: 20px 4vw;
+    background:
+      linear-gradient(180deg, rgba(244, 245, 247, 0.98), rgba(244, 245, 247, 0.9)),
+      url("assets/hero-lock.jpg") right center / auto 100% no-repeat;
+  }
+
+  .advantages-copy h2 {
+    font-size: 22px;
+  }
+
+  .advantage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .advantage-card {
+    min-height: 84px;
+    padding: 14px 10px;
+  }
+
+  .stat-number {
+    font-size: 23px;
+  }
+
+  .featured .stat-number {
+    font-size: 27px;
   }
 
   .journey {
