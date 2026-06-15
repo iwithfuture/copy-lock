@@ -533,6 +533,9 @@ img {
   display: grid;
   place-items: center;
   min-height: 82px;
+  border-radius: 4px;
+  outline: 0;
+  cursor: pointer;
 }
 
 .timeline article::before {
@@ -555,7 +558,94 @@ img {
   line-height: 1.25;
 }
 
-.journey img {
+.timeline article:hover,
+.timeline article:focus,
+.timeline article:focus-visible {
+  color: #f2c878;
+}
+
+.timeline article:hover::before,
+.timeline article:focus::before,
+.timeline article:focus-visible::before {
+  box-shadow: 0 0 0 7px rgba(201, 154, 75, 0.22);
+}
+
+.stage-preview {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 14px);
+  z-index: 5;
+  width: 158px;
+  margin: 0;
+  padding: 7px;
+  color: #fff;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(5, 12, 21, 0.92);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.stage-preview::after {
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  content: "";
+  background: rgba(5, 12, 21, 0.92);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.stage-preview img {
+  width: 100%;
+  height: 90px;
+  min-height: 0;
+  object-fit: cover;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.stage-preview figcaption {
+  margin-top: 6px;
+  color: #f4d28e;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.timeline article:hover .stage-preview,
+.timeline article:focus .stage-preview,
+.timeline article:focus-visible .stage-preview {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.stage-preview-end {
+  left: auto;
+  right: 0;
+  transform: translate(0, 8px);
+}
+
+.stage-preview-end::after {
+  left: auto;
+  right: 22px;
+  transform: rotate(45deg);
+}
+
+.timeline article:hover .stage-preview-end,
+.timeline article:focus .stage-preview-end,
+.timeline article:focus-visible .stage-preview-end {
+  transform: translate(0, 0);
+}
+
+.journey > img {
   width: 100%;
   height: 100%;
   min-height: 130px;
