@@ -1073,34 +1073,19 @@ img {
   mask-image: radial-gradient(circle at 50% 48%, #000, transparent 76%);
 }
 
-.global-projects > .world-map svg {
+.map-base,
+.global-projects > .world-map .map-overlay {
   position: absolute;
   inset: 7% 3% 3%;
   width: 94%;
   height: 90%;
 }
 
-.map-land path {
-  vector-effect: non-scaling-stroke;
-}
-
-.land-mass {
-  fill: rgba(157, 177, 192, 0.22);
-  stroke: rgba(222, 234, 242, 0.22);
-  stroke-width: 1.4;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18));
-}
-
-.land-detail {
-  fill: rgba(157, 177, 192, 0.17);
-  stroke: rgba(222, 234, 242, 0.18);
-  stroke-width: 1.2;
-}
-
-.island {
-  fill: rgba(157, 177, 192, 0.2);
-  stroke: rgba(222, 234, 242, 0.18);
-  stroke-width: 1;
+.map-base {
+  object-fit: contain;
+  opacity: 0.76;
+  filter: invert(1) sepia(18%) saturate(420%) hue-rotate(169deg) brightness(1.45);
+  mix-blend-mode: screen;
 }
 
 .map-grid path {
@@ -1629,7 +1614,8 @@ img {
     min-height: 520px;
   }
 
-  .world-map svg {
+  .map-base,
+  .global-projects > .world-map .map-overlay {
     inset: 7% 0 2%;
     width: 100%;
   }
